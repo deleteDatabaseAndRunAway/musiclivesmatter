@@ -140,8 +140,9 @@
         </div>
         <div class="card">
             <h2>已有歌单</h2>
-            <div class="fakeimg" style="height:200px;">图片</div>
-            <p>一些歌曲...</p>
+            {% for song in songs %}
+            {{ song.song_id }}
+            {% endfor %}
         </div>
         <div class="card">
             <h2>歌单热度</h2>
