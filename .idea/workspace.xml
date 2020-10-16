@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5bb4a3a-35da-438b-9235-2afade1d3630" name="默认更改列表" comment="" />
+    <list default="true" id="b5bb4a3a-35da-438b-9235-2afade1d3630" name="默认更改列表" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4e27c146-6cec-4a04-a7ba-fc704b2988e3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4e27c146-6cec-4a04-a7ba-fc704b2988e3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bighomework/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/bighomework/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bighomework/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bighomework/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/musicBase/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/musicBase/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/templates/showUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/musicBase/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/musicBase/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/musicBase/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/musicBase/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,13 +47,24 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="musicBase_user: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ioc24I7MoeIHoUe0UXAIJzw9MQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -94,11 +117,29 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602577174450</updated>
-      <workItem from="1602577187462" duration="5165000" />
+      <workItem from="1602577187462" duration="5428000" />
+      <workItem from="1602589547639" duration="257000" />
+      <workItem from="1602590276929" duration="11773000" />
+      <workItem from="1602635009240" duration="3699000" />
+      <workItem from="1602639872931" duration="5754000" />
+      <workItem from="1602814561624" duration="2907000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

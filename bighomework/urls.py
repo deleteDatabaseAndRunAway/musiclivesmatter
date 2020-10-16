@@ -21,9 +21,11 @@ from musicBase import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('musicBase/', views.login, name='login'),
-    path('musicBase/login/', views.login, name='login'),
-    path('musicBase/register/', views.regist, name='register'),
+    path('musicBase/index/user_login/', views.login, name='login'),
+    path('musicBase/index/user_logout/', views.logout, name='logout'),
+    path('musicBase/index/user_Register/', views.regist, name='register'),
     path('musicBase/index/', views.index, name='index'),
-    path('logout/musicBase/', views.logout, name='logout'),
+    path('musicBase/index/user_logout', views.logout, name='logout'),
+    path('musicBase/index/showUser/', views.showUser, name='shouUser'),
+    path('musicBase/index/user_delete/',views.delet_user, name='deleteUser'),
 ]
