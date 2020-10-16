@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('musicBase/index/user_login/', views.login, name='login'),
     path('musicBase/index/user_logout/', views.logout, name='logout'),
-    path('musicBase/index/user_Register.html/', views.regist, name='register'),
+    path('musicBase/index/user_Register/', views.regist, name='register'),
     path('musicBase/index/', views.index, name='index'),
     path('musicBase/index/user_logout', views.logout, name='logout'),
     path('musicBase/index/showUser/', views.showUser, name='shouUser'),

@@ -121,14 +121,14 @@
 </div>
 
 <div class="topnav">
-    <a href="user_Register.html">用户注册</a>
-    <a href="user_delete.html">用户注销</a>
-    <a href="user_login.html">用户登陆</a>
-    <a href="update_user_info.html">用户信息管理</a>
-    <a href="add_song.html">增加歌曲</a>
-    <a href="add_singer.html">增加歌手</a>
-    <a href="add_album.html">增加专辑</a>
-    <a href="about-us.html" style="float:right">关于我们</a>
+    <a href="user_Register">用户注册</a>
+    <a href="user_delete">用户注销</a>
+    <a href="user_login">用户登陆</a>
+    <a href="update_user_info">用户信息管理</a>
+    <a href="add_song">增加歌曲</a>
+    <a href="add_singer">增加歌手</a>
+    <a href="add_album">增加专辑</a>
+    <a href="about-us" style="float:right">关于我们</a>
 </div>
 
 <div class="row">
@@ -140,9 +140,8 @@
         </div>
         <div class="card">
             <h2>已有歌单</h2>
-            {% for song in songs %}
-            {{ song.song_id }}
-            {% endfor %}
+            <div class="fakeimg" style="height:200px;">图片</div>
+            <p>一些歌曲...</p>
         </div>
         <div class="card">
             <h2>歌单热度</h2>

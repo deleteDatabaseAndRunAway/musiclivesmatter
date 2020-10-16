@@ -28,7 +28,7 @@ class SongInfo(forms.Form):
 def regist(req):
     if (req.method == 'POST') | (req.method == 'GET'):
         print("req : %s\n", req)
-        uf = UserRegistInfo(req.GET)
+        uf = UserRegistInfo(req.POST)
         print("uf : %s\n", uf)
         print(uf.cleaned_data)
         if uf.is_valid():
@@ -134,12 +134,18 @@ def showUser(req):
 
 
 def addSong(req):
-    if (req.method == 'POST') | (req.method == 'GET'):
-        sf = SongInfo(req.GET)
+    if req.method == 'POST':
+        sf = SongInfo(req.POST)
         if sf.is_valid():
+
             # 获得表单数据
             song_name = sf.cleaned_data['song_name']
             song_singer_name = sf.cleaned_data['song_singer_name']
+
+            # 如果有此歌手
+            singer = Singer.objects.filter(singer_name__exact=song_singer_name)
+
+
 
             # 歌曲名重复吗
             song = Song.objects.filter(song_name__exact=song_name, song_singer_name__exact=song_singer_name)
@@ -149,6 +155,7 @@ def addSong(req):
             # 添加到数据库
             Song.objects.create(song_name=song_name, song_singer_name=song_singer_name)
             return HttpResponse('add success!!')
+
         else:
             print(45)
     else:
