@@ -18,38 +18,37 @@ class User(models.Model):
 
 
 class Song(models.Model):
-    song_id = models.IntegerField()
+    song_id = models.IntegerField(null=True)
     song_name = models.CharField(max_length=50)
     # song_singer_name = models.CharField(max_length=50)
-    song_singer_id = models.IntegerField()
-    song_album_id = models.IntegerField()
-    song_produce = models.DateTimeField()
+    song_singer_id = models.IntegerField(null=True)
+    song_album_id = models.IntegerField(null=True)
+    song_produce = models.DateTimeField(null=True)
 
 
 class SongComment(models.Model):
-    comment_id = models.IntegerField()
-    comment_song_id = models.IntegerField()
-    comment_msg = models.TextField()
+    comment_id = models.IntegerField(null=True)
+    comment_song_id = models.IntegerField(null=True)
+    comment_msg = models.TextField(null=True)
 
 
 class SongLikes(models.Model):
-    like_id = models.IntegerField()
-    like_user_id = models.IntegerField()
+    like_id = models.IntegerField(null=True)
+    like_user_id = models.IntegerField(null=True)
     like_user_id = models.ForeignKey('User', on_delete=models.CASCADE, null=True)
-    like_song_id = models.IntegerField()
-
+    like_song_id = models.IntegerField(null=True)
 
 
 class Album(models.Model):
-    album_id = models.IntegerField()
+    album_id = models.IntegerField(null=True)
     album_name = models.CharField(max_length=50)
-    album_data = models.DateTimeField()
-    album_singer_id = models.IntegerField()
+    album_data = models.DateTimeField(null=True)
+    album_singer_id = models.IntegerField(null=True)
 
 
 class Singer(models.Model):
-    singer_id = models.IntegerField()
+    singer_id = models.IntegerField(null=True)
     singer_name = models.CharField(max_length=20)
     singer_gender = models.CharField(max_length=10)
-    singer_msg = models.TextField()
+    singer_msg = models.TextField(null=True)
 
