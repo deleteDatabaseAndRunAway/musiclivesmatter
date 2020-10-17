@@ -3,8 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>音乐添加</title>
+    <link rel="stylesheet" type="text/css" href="user_style.css" />
 </head>
 <body>
+<div class="container">
+    <div class="info-box">
+        <div class="title-box">
+            <span>歌曲添加</span>
+        </div>
+        <form action="#" method="post">
+            <div class="txt1-box">
+                <span class="require">*</span>
+                <label for="singer_name">歌手名</label>
+                <div class="username-input">
+                    <input type="text" id="singer_name" name="singer_name" placeholder="请输入歌手名 长度:1-20个字符" />
+                </div>
+            </div>
 
+            <div class="txt2-box">
+                <span class="require">*</span>
+                <label for="singer_gender">歌手性别</label>
+                <div class="username-input">
+                    <input type="text" id="singer_gender" name="singer_gender" placeholder="请输入歌手性别 长度:1-20个字符" />
+                </div>
+            </div>
+
+            <div class="txt3-box">
+                <span class="require">*</span>
+                <label for="singer_msg">歌手信息</label>
+                <div class="username-input">
+                    <input type="text" id="singer_msg" name="singer_msg" placeholder="请输入歌手相关信息 长度:1-20个字符" />
+                </div>
+            </div>
+
+            <div class="submit-box">
+                <input id = "submit-button" type="submit" value="添加">
+            </div>
+
+        </form>
+    </div>
+</div>
 </body>
 </html>

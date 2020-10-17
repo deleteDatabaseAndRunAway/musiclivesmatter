@@ -13,7 +13,7 @@ input {
     width: 100%;
 }
 
-.register-box {
+.info-box {
     position: relative;
     height: 500px;
     width: 800px;
@@ -37,7 +37,7 @@ input {
     line-height: 50px;
 }
 
-.username-box {
+.txt1-box {
     position: absolute;
     width: 420px;
     height: 40px;
@@ -60,7 +60,7 @@ input {
     border-radius: 5px;
 }
 
-.userPassword-box {
+.txt2-box {
     position: absolute;
     width: 420px;
     height: 40px;
@@ -82,7 +82,14 @@ input {
     border-radius: 5px;
 }
 
-.userRePassword-box {
+#password {
+    height: 35px;
+    width: 290px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.txt3-box {
     position: absolute;
     width: 420px;
     height: 40px;
@@ -135,3 +142,4 @@ input {
     margin-left: 320px;
 
 }
+

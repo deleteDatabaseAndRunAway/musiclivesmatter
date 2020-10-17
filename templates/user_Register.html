@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>账户注册</title>
-    {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/user_style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="user_style.css" />
 
 </head>
 <body>
 <div class="container">
-    <div class="register-box">
+    <div class="info-box">
         <div class="title-box">
             <span>用户注册</span>
         </div>
         <form action="#" method="post">
-            <div class="username-box">
+            <div class="txt1-box">
                 <span class="require">*</span>
                 <label for="username">用户名</label>
                 <div class="username-input">
@@ -22,19 +21,21 @@
                 </div>
             </div>
 
-            <div class="userPassword-box">
+            <div class="txt2-box">
                 <span class="require">*</span>
-                <label for="password">密码</label>
+                <label for="userPassword">密码</label>
                 <div class="userPassword-input">
-                    <input type="password" id="password" name="password" placeholder="请输入密码 长度:1-20个字符" />
+                    <input type="password" id="userPassword" name="userPassword" placeholder="请输入密码 长度:1-20个字符" />
                 </div>
             </div>
 
-            <div class="userRePassword-box">
+            <div class="txt3-box">
                 <span class="require">*</span>
-                <label for="repeat_password">确认密码</label>
+
+
+                <label for="userRePassword">确认密码</label>
                 <div class="userRePassword-input">
-                    <input type="password" id="repeat_password" name="repeat_password" placeholder="请重复输入密码" />
+                    <input type="password" id="userRePassword" name="repeat_password" placeholder="请重复输入密码" />
                 </div>
             </div>
 
