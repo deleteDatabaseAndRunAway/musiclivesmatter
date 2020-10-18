@@ -82,13 +82,6 @@ input {
     border-radius: 5px;
 }
 
-#password {
-    height: 35px;
-    width: 290px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-}
-
 .txt3-box {
     position: absolute;
     width: 420px;
