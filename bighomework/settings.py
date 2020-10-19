@@ -122,5 +122,4 @@ LANGUAGE_CODE = 'zh-hans'
 # 把国际时区改为中国时区
 # TIME_ZONE = 'UTC'
 TIME_ZONE = 'Asia/Shanghai'
-STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]

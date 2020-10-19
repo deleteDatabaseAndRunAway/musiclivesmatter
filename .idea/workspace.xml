@@ -2,11 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5bb4a3a-35da-438b-9235-2afade1d3630" name="默认更改列表" comment="">
+      <change afterPath="$PROJECT_DIR$/musicBase/migrations/0004_auto_20201019_1246.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/musicBase/migrations/0005_auto_20201019_1519.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/musicBase/migrations/0006_auto_20201019_1602.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/musiclivesmatter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/musiclivesmatter.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bighomework/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/bighomework/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bighomework/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bighomework/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/musicBase/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/musicBase/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/musicBase/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/musicBase/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/user_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/add_singer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_singer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/add_song.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_song.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user_Register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_Register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/user_style.css" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +44,31 @@
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="musicBase_singer: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="musicBase_songlikes: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="db [2]" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
@@ -42,13 +81,6 @@
         <item name="db [2]" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db [2]" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="musicBase_user: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -60,22 +92,23 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ioc24I7MoeIHoUe0UXAIJzw9MQ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\study\数据库\musiclivesmatter\static\css" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="bighomework" type="Python.DjangoServer" factoryName="Django server">
@@ -103,16 +136,6 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand />
-          <select />
-        </treeState>
-      </serviceView>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -131,6 +154,8 @@
       <workItem from="1602814561624" duration="2907000" />
       <workItem from="1602826587366" duration="5138000" />
       <workItem from="1602862202785" duration="3596000" />
+      <workItem from="1602987551126" duration="2467000" />
+      <workItem from="1603081822805" duration="2865000" />
     </task>
     <servers />
   </component>
@@ -149,5 +174,22 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603082205461">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1603082205461" />
+    <state x="548" y="156" key="FileChooserDialogImpl" timestamp="1603092383765">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="548" y="156" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603092383765" />
+    <state x="272" y="57" key="SettingsEditor" timestamp="1602987570913">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="272" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1602987570913" />
   </component>
 </project>

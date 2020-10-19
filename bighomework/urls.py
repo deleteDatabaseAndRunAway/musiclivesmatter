@@ -20,6 +20,7 @@ from musicBase import urls
 from musicBase import views
 
 urlpatterns = [
+    path('',views.index),
     path('admin/', admin.site.urls),
     path('musicBase/index/user_login/', views.login, name='login'),
     path('musicBase/index/user_logout/', views.logout, name='logout'),
