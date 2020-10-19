@@ -43,17 +43,14 @@ class Like(forms.Form):
 
 def regist(req):
     if (req.method == 'POST') | (req.method == 'GET'):
-        print("req : %s\n", req)
+        print("req : %s\n" % req)
         uf = UserRegistInfo(req.POST)
-        print("uf : %s\n", uf)
-        print(uf.cleaned_data)
+        print("uf : %s\n" % uf)
+        print(uf._errors)
         if uf.is_valid():
-            # 获得表单数据
             username = uf.cleaned_data['username']
             password = uf.cleaned_data['password']
             repeat_password = uf.cleaned_data['repeat_password']
-
-            # 用户名重复吗
             user = User.objects.filter(user_name__exact=username)
             print("35\n")
             if user:
@@ -61,8 +58,6 @@ def regist(req):
                     print(uf.password)
                     print(uf.repeat_password)
                     return render_to_response('user_Register.html', {'uf': uf})
-
-            # 添加到数据库
             User.objects.create(user_name=username, password=password)
             return HttpResponse('regist success!!')
         else:
@@ -71,7 +66,6 @@ def regist(req):
         print(req.method)
         uf = UserInfo()
     return render_to_response('user_Register.html', {'uf': uf})
-    # return render_to_response('register.html', {'uf': uf}, context_instance=RequestContext(req))
 
 
 def delet_user(req):
@@ -90,8 +84,6 @@ def delet_user(req):
                 # 比较成功删除
                 response = HttpResponseRedirect('/musicBase')
                 return response
-            # 比较失败报错
-            # User.objects.create(username=username, password=password)
             return HttpResponse('no such User!')
     else:
         uf = UserInfo()

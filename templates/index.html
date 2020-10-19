@@ -121,9 +121,9 @@
 </div>
 
 <div class="topnav">
-    <a href="user_Register">用户注册</a>
-    <a href="user_delete">用户注销</a>
-    <a href="user_login">用户登陆</a>
+    <a href="{% url 'musicBase:regist' %}">用户注册</a>
+    <a href="{% url 'musicBase:delete_user' %}">用户注销</a>
+    <a href="{% url 'musicBase:login' %}">用户登陆</a>
     <a href="update_user_info">用户信息管理</a>
     <a href="add_song">增加歌曲</a>
     <a href="add_singer">增加歌手</a>

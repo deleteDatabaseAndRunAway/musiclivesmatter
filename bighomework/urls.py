@@ -14,19 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
+from django.conf.urls import url
 
-from musicBase import urls
 from musicBase import views
 
 urlpatterns = [
     path('',views.index),
     path('admin/', admin.site.urls),
-    path('musicBase/index/user_login/', views.login, name='login'),
-    path('musicBase/index/user_logout/', views.logout, name='logout'),
-    path('musicBase/index/user_Register/', views.regist, name='register'),
-    path('musicBase/index/', views.index, name='index'),
-    path('musicBase/index/user_logout', views.logout, name='logout'),
-    path('musicBase/index/showUser/', views.showUser, name='shouUser'),
-    path('musicBase/index/user_delete/',views.delet_user, name='deleteUser'),
+    url(r'^musicBase/',include('musicBase.urls',namespace='musicBase')),
 ]
