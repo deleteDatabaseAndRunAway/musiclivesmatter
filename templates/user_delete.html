@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends "base.html" %}
+{% block title %}
     <title>用户注销</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static'css/user_style.css'%}" />
-<body>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user_style.css'%}" />
+{% endblock %}
+{% block content %}
 <div class="container">
     <div class="info-box">
         <div class="title-box">
@@ -35,5 +34,4 @@
         </form>
     </div>
 </div>
-</body>
-</html>
+{% endblock %}

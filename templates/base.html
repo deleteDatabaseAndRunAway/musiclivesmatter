@@ -1,10 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta charset="utf-8">
+
+    <script>
+        function displayDate(){
+            document.getElementById("demo").innerHTML=Date();
+
+        }
+    </script>
+    {% block head %}
+    <title>音乐社交平台</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user_style.css'%}" />
+    {% endblock %}
+
+
 </head>
 <body>
-$END$
+
+<div class="header">
+    <h1>音乐社交平台</h1>
+</div>
+
+<div class="topnav">
+    {% if username == None or  username == "" %}
+        <a href="{% url 'musicBase:regist' %}">用户注册</a>
+        <a href="{% url 'musicBase:login' %}">用户登陆</a>
+    {% else %}
+        <a href="">{{ username }} 个人主页</a>
+        <a href="{% url 'musicBase:delete_user' %}">用户注销</a>
+        <a href="{% url 'musicBase:logout' %}">退出登录</a>
+    {% endif %}
+
+
+    <a href="update_user_info">用户信息管理</a>
+    <a href="add_song">增加歌曲</a>
+    <a href="add_singer">增加歌手</a>
+    <a href="add_album">增加专辑</a>
+
+    <a href="about-us" style="float:right">关于我们</a>
+
+</div>
+
+{% block content %}
+{% endblock %}
+
+<div class="footer">
+    <h2>待定</h2>
+</div>
+
 </body>
 </html>

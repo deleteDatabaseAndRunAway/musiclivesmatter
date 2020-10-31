@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends "base.html" %}
+    {% block head %}
     <title>用户登录</title>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static'css/user_style.css'%}" />
-<body>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user_style.css'%}" />
+{% endblock %}
+
+{% block content %}
 <div class="container">
     <div class="info-box">
         <div class="title-box">
@@ -34,5 +34,5 @@
         </form>
     </div>
 </div>
-</body>
-</html>
+
+{% endblock %}

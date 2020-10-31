@@ -1,43 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends "base.html" %}
+    {% block head %}
     <title>账户注册</title>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/user_style.css' %}"/>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user_style.css'%}" />
+{% endblock %}
 
-</head>
-<body>
+{% block content %}
 <div class="container">
     <div class="info-box">
         <div class="title-box">
             <span>用户注册</span>
         </div>
         <form action="#" method="post">
-            <div class="txt1-box">
-                <span class="require">*</span>
-                <label for="username">用户名</label>
-                <div class="username-input">
-                    <input type="text" id="username" name="username" placeholder="请输入用户名 长度:1-20个字符" />
+            {% for i in uf %}
+                <div class="txt1-box">
+                    <span class="require">*</span>
+                    <label for="{{i.name}}">{{i.label}}</label>
+                    <div class="input">
+                        <input type="text" id="{{i.name}}" name="{{i.name}}" placeholder="请输入" />
+                    </div>
                 </div>
-            </div>
-
-            <div class="txt2-box">
-                <span class="require">*</span>
-                <label for="userPassword">密码</label>
-                <div class="userPassword-input">
-                    <input type="password" id="userPassword" name="password" placeholder="请输入密码 长度:1-20个字符" />
-                </div>
-            </div>
-
-            <div class="txt3-box">
-                <span class="require">*</span>
-                <label for="userRePassword">确认密码</label>
-                <div class="userRePassword-input">
-                    <input type="password" id="userRePassword" name="repeat_password" placeholder="请重复输入密码" />
-                </div>
-            </div>
-
+            {% endfor %}
             <div class="submit-box">
                 <input id = "submit-button" type="submit" value="注册">
             </div>
@@ -48,5 +31,4 @@
         </form>
     </div>
 </div>
-</body>
-</html>
+{% endblock %}

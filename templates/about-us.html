@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends "base.html" %}
+{% block title %}
     <title>关于我们</title>
-    <style>
-
-    </style>
-</head>
-<body>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user_style.css'%}" />
+{% endblock %}
+{% block content %}
 <p>我是最帅的人</p>
-</body>
-</html>
+{% endblock %}
