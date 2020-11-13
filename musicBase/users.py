@@ -5,6 +5,7 @@ from django.urls import reverse
 from django import forms
 from musicBase import models
 from musicBase.models import *
+from django.contrib import auth
 from django.contrib import messages
 
 
@@ -15,6 +16,7 @@ class UserInfo(forms.Form):
 
 
 class UserRegistInfo(forms.Form):
+    email = forms.EmailField(label='电子邮箱')
     username = forms.CharField(label='用户名', max_length=100)
     password = forms.CharField(label='密码', max_length=100)
     repeat_password = forms.CharField(label='确认密码', max_length=100)
@@ -23,41 +25,47 @@ class UserRegistInfo(forms.Form):
         initial=1
     )
     user_com_type = forms.ChoiceField(label='请选择联系方式',
-        choices=[(1, "QQ"),(2, "微信"),(3, "微博"),(4, "GitHub")], #单选下拉框
+        choices=[(1, "微信"),(2, "QQ"),(3, "微博"),(4, "GitHub")], #单选下拉框
         initial=2
     )
     user_com = forms.CharField(label='具体联系方式',max_length=30)
+    user_birthday = forms.DateField(label='您的生日')
+    user_show_message = forms.ChoiceField(label='是否向其他用户展示个人信息',
+        choices=[(True,"是"),(False,"否"),],
+        initial=False
+    )
+    user_show_likes = forms.ChoiceField(label='是否向其他用户展示歌曲喜好',
+        choices=[(True,"是"),(False,"否"),],
+        initial=True
+    )
+    def clean_user_email(self):
+        user_email = self.cleaned_data['email']
+        users = User.objects.filter(email=user_email)
+        if users:
+            raise forms.ValidationError("此邮箱已注册")
+        return user_email
+    def clean_repeat_password(self):
+        pwd = self.cleaned_data['password']
+        rpwd = self.cleaned_data['repeat_password']
+        if pwd != rpwd:
+            raise forms.ValidationError("请输入相同的密码！")
+        return pwd
 
 
 def regist(req):
     if (req.method == 'GET'):
         uf = UserRegistInfo()
-        print(uf)
         return render_to_response('user_Register.html', {'uf': uf})
     if (req.method == 'POST'):
         print("req : %s\n" % req)
         uf = UserRegistInfo(req.POST)
-        print("uf : %s\n" % uf)
-        print(uf._errors)
+        print(uf.errors)
         if uf.is_valid():
-            username = uf.cleaned_data['username']
-            password = uf.cleaned_data['password']
-            repeat_password = uf.cleaned_data['repeat_password']
-            user = User.objects.filter(user_name__exact=username)
-            print("35\n")
-            if user:
-                if password != repeat_password:
-                    print(uf.password)
-                    print(uf.repeat_password)
-                    return render_to_response('user_Register.html', {'uf': uf})
-            User.objects.create(user_name=username, password=password)
+            cleaned = uf.clean()
+            del cleaned['repeat_password']
+            user = User.objects.create_user(**cleaned)
             return HttpResponse('regist success!!')
-        else:
-            print(45)
-    else:
-        print(req.method)
-        uf = UserInfo()
-    return render_to_response('user_Register.html', {'uf': uf})
+    return render_to_response('user_Register.html', {'uf': uf,'script':"alert",'wrong':"是不是出什么问题啦！"})
 
 
 def delet_user(req):
@@ -74,7 +82,6 @@ def delet_user(req):
     else:
         uf = UserInfo()
     return render_to_response('user_delete.html', {'uf': uf})
-    # return render_to_response('register.html', {'uf': uf}, context_instance=RequestContext(req))
 
 
 # 登陆
@@ -82,28 +89,26 @@ def login(req:HttpRequest):
     if req.method == 'POST':
         uf = UserInfo(req.POST)
         username = req.POST['username']
-        password = req.POST['userPassword']
-        print(username)
-        user = User.objects.filter(user_name__exact=username, password__exact=password)
+        password = req.POST['password']
+        user = auth.authenticate(username=username,password=password)
         print(user)
         if user:
+            auth.login(req,user)
+            req.session['username'] = username
             response = redirect(reverse('musicBase:index'))
-
-            response.set_cookie('username', username, 3600)
-            print(req.COOKIES.get('username'))
             return response
         else:
-
-            # 比较失败，还在login
-            return HttpResponseRedirect('/musicBase/login/')
+            return redirect(reverse('musicBase:login'))
     elif req.method == 'GET':
         return render_to_response('user_login.html')
-    else:
-        uf = UserInfo()
-    return render_to_response('index.html', {'uf': uf})
+    return render_to_response('user_login.html')
 
 
 def logout(req : HttpRequest):
     response = HttpResponse('logout !!')
-    response.delete_cookie('username')
-    return render_to_response('index.html')
+    auth.logout(req)
+    return redirect(reverse('musicBase:index'))
+
+def update_user_info(req : HttpRequest):
+    print(req.user.username)
+    return render(req,'update_user_info.html')

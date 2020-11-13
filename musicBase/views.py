@@ -31,9 +31,8 @@ class Like(forms.Form):
 
 # 登陆成功
 def index(req:HttpRequest):
-    username = req.COOKIES.get('username')
-    print(username)
-    return render_to_response('index.html', {'username': username})
+    print(req.user.is_authenticated)
+    return render(req,'index.html')
 
 
 # 退出
@@ -42,7 +41,7 @@ def index(req:HttpRequest):
 
 def showUser(req):
     userlist = models.User.objects.all()
-    return render(req, 'showUser.html', {'userlist':userlist})
+    return render(req,'showUser.html', {'userlist':userlist})
 
 
 def addSong(req):
@@ -74,7 +73,6 @@ def addSong(req):
             print(45)
     else:
         print(req.method)
-        uf = UserInfo()
         return render_to_response('user_Register.html', {'uf': uf})
 
 

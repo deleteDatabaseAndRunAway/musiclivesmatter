@@ -1,10 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>用户信息管理</title>
-</head>
-<body>
+{% extends "base.html" %}
+    {% block head %}
+    <title>用户信息修改</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user_style.css'%}" />
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <script type="text/javascript">{{script}}('{{wrong}}')</script>
+{% endblock %}
 
-</body>
-</html>
+{% block content %}
+<div id="app">
+<script  type="text/javascript">
+            console.log("hahah")
+        </script>
+    <table class="table table-hover form-group">
+
+        <tbody>
+        <tr>
+            <td>邮箱（不可更改）</td>
+            <td><span v-text="email" class="form-control">{{ vm.email }}</span></td>
+        </tr>
+        <tr>
+            <td>用户名</td>
+            <td><label>
+                <input v-model="name" class="form-control"/>
+            </label></td>
+        </tr>
+        <tr>
+            <td>性别</td>
+            <td><label>
+                <input v-model="gender" class="form-control"/>
+            </label></td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+{% endblock %}
+
+{% block vuejs %}
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" type="text/javascript">
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            email: '{{ request.user.email }}',
+            name: '{{ request.user.username }}',
+            gender: '{{ request.user.user_gender }}'
+        }
+    })
+</script>
+{% endblock %}

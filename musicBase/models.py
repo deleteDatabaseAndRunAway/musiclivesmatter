@@ -1,21 +1,18 @@
 from django.db import models
-
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
-class User(models.Model):
-    user_id = models.AutoField(primary_key=True)
-    user_name = models.CharField(max_length=20,null=True)
-    password = models.CharField(max_length=20,null=True)
+class User(AbstractUser):
     user_gender = models.CharField(max_length=10,null=True)
     user_com_type = models.CharField(max_length=20,null=True)
     user_com = models.CharField(max_length=30,null=True)
     user_birthday = models.DateTimeField(null=True)
     user_show_message = models.BooleanField(null=True)
     user_show_likes = models.BooleanField(null=True)
-    user_email = models.EmailField(null=True)
 
     def __str__(self):
-        return self.user_name
+        return self.username
+
 
 class Album(models.Model):
     album_id = models.AutoField(primary_key=True)

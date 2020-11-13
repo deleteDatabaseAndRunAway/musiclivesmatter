@@ -3,6 +3,7 @@
     <title>账户注册</title>
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/user_style.css'%}" />
+        <script type="text/javascript">{{script}}('{{wrong}}')</script>
 {% endblock %}
 
 {% block content %}
@@ -17,7 +18,7 @@
                     <span class="require">*</span>
                     <label for="{{i.name}}">{{i.label}}</label>
                     <div class="input">
-                        <input type="text" id="{{i.name}}" name="{{i.name}}" placeholder="请输入" />
+                        {{ i }}
                     </div>
                 </div>
             {% endfor %}
