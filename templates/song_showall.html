@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+    {% block head %}
+    <title>显示全部歌曲</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user_style.css'%}" />
+        <script type="text/javascript">{{script}}('{{wrong}}')</script>
+{% endblock %}
+
+{% block content %}
+<div id="app">
+    <table class="table table-hover form-group">
+        <thead>
+            <th>歌曲名</th>
+            <th>喜欢次数</th>
+            <th>专辑</th>
+            <th>歌手</th>
+        </thead>
+        <tbody>
+        {% for i in songs %}
+            <tr>
+                <td><a href="song_index/{{ i.song_id }}"> {{ i.song_name }}</a></td>
+                <td>{{ i.song_likes }}</td>
+                <td>{{ i.album_id.album_name }}</td>
+                <td>{{ i.album_id.singer_id.singer_name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

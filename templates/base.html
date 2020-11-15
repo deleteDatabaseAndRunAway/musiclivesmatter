@@ -19,7 +19,7 @@
 
 <div class="topnav">
     {% if request.user.is_authenticated %}
-        <a href="">{{ request.user }} 个人主页</a>
+        <a href="user_index/{{ request.user.id }}">{{ request.user }} 个人主页</a>
         <a href="{% url 'musicBase:delete_user' %}">用户注销</a>
         <a href="{% url 'musicBase:logout' %}">退出登录</a>
         <a href="{% url 'musicBase:update_user_info' %}">用户信息管理</a>

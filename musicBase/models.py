@@ -18,20 +18,20 @@ class Album(models.Model):
     album_id = models.AutoField(primary_key=True)
     album_name = models.CharField(max_length=50)
     album_date = models.DateTimeField(null=True)
-    album_singer_id = models.IntegerField(null=True)
+    singer_id = models.ForeignKey('Singer',related_name='album_singer', on_delete=models.CASCADE, null=True)
 
 class Singer(models.Model):
     singer_id = models.AutoField(primary_key=True)
     singer_name = models.CharField(max_length=20)
-    singer_gender = models.BooleanField(null=True)
+    singer_gender = models.CharField(max_length=10,null=True)
     singer_msg = models.TextField(null=True)
 
 
 class Song(models.Model):
     song_id = models.AutoField(primary_key=True)
     song_name = models.CharField(max_length=50)
-    song_album_id = models.ForeignKey('Album',related_name='song_album', on_delete=models.CASCADE, null=True)
-    song_likes = models.IntegerField(null=True)
+    album_id = models.ForeignKey('Album',related_name='song_album', on_delete=models.CASCADE, null=True)
+    song_likes = models.IntegerField(null=True, default=0)
 
 
 class SongComment(models.Model):

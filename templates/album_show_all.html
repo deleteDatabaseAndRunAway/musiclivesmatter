@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+    {% block head %}
+    <title>显示全部专辑</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user_style.css'%}" />
+        <script type="text/javascript">{{script}}('{{wrong}}')</script>
+{% endblock %}
+
+{% block content %}
+<div id="app">
+    <table class="table table-hover form-group">
+        <thead>
+            <th>专辑名</th>
+            <th>发行日期</th>
+            <th>歌手</th>
+        </thead>
+        <tbody>
+        {% for i in albums %}
+            <tr>
+                <td>{{ i.album_name }}</td>
+                <td>{{ i.album_date }}</td>
+                <td>{{ i.singer_id.singer_name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

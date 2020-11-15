@@ -55,7 +55,7 @@ class UserRegistInfo(forms.Form):
 def regist(req):
     if (req.method == 'GET'):
         uf = UserRegistInfo()
-        return render_to_response('user_Register.html', {'uf': uf})
+        return render(req,'user_Register.html', {'uf': uf})
     if (req.method == 'POST'):
         print("req : %s\n" % req)
         uf = UserRegistInfo(req.POST)
@@ -65,7 +65,7 @@ def regist(req):
             del cleaned['repeat_password']
             user = User.objects.create_user(**cleaned)
             return HttpResponse('regist success!!')
-    return render_to_response('user_Register.html', {'uf': uf,'script':"alert",'wrong':"是不是出什么问题啦！"})
+    return render(req,'user_Register.html', {'uf': uf,'script':"alert",'wrong':"是不是出什么问题啦！"})
 
 
 def delet_user(req):
@@ -81,7 +81,7 @@ def delet_user(req):
             return HttpResponse('no such User!')
     else:
         uf = UserInfo()
-    return render_to_response('user_delete.html', {'uf': uf})
+    return render(req,'user_delete.html', {'uf': uf})
 
 
 # 登陆
@@ -95,13 +95,13 @@ def login(req:HttpRequest):
         if user:
             auth.login(req,user)
             req.session['username'] = username
-            response = redirect(reverse('musicBase:index'))
+            response = render(req,'index.html')
             return response
         else:
-            return redirect(reverse('musicBase:login'))
+            return render(req,'user_login.html')
     elif req.method == 'GET':
-        return render_to_response('user_login.html')
-    return render_to_response('user_login.html')
+        return render(req,'user_login.html')
+    return render(req,'user_login.html')
 
 
 def logout(req : HttpRequest):
@@ -112,3 +112,9 @@ def logout(req : HttpRequest):
 def update_user_info(req : HttpRequest):
     print(req.user.username)
     return render(req,'update_user_info.html')
+
+
+def user_index(req:HttpRequest,user_id):
+    user_now = req.user
+    likes = SongLikes.objects.filter(like_user_id=user_now)
+    return render(req,'user_index.html',{'user':user_now,'likes':likes})

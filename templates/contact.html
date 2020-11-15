@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Creative Studio</title>
-    <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index_style.css'%}" media="screen"/>
     <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
     <script type="text/javascript" src="js/coda-slider.1.1.1.js"></script>
@@ -18,13 +18,20 @@
 
         <div id="menu">
             <ul>
-                <li><a href="index.html" title="">home</a></li>
+                <li><a class="current" href="index.html" title="">主页</a></li>
                 <li class="divider"></li>
-                <li><a href="content.html" title="">about us</a></li>
+                <li><a href="user_Register.html" title="">用户注册</a></li>
                 <li class="divider"></li>
-                <li><a href="content.html" title="">portofolio</a></li>
+                <li><a href="user_login.html" title="">用户登录</a></li>
                 <li class="divider"></li>
-                <li><a class="current" href="contact.html" title="">contact</a></li>
+                <li><a href="add_song.html" title="">增加歌曲</a></li>
+                <li class="divider"></li>
+                <li><a href="add_singer.html" title="">增加歌手</a></li>
+                <li class="divider"></li>
+                <li><a href="add_album.html" title="">增加专辑</a></li>
+                <li class="divider"></li>
+                <li><a href="about-us.html" title="">关于我们</a></li>
+                <li class="divider"></li>
             </ul>
         </div>
 
@@ -106,31 +113,16 @@
     </div> <!--end of left content-->
 
     <div class="right_content">
-        <div class="title">Clients Testimonials</div>
+        <div class="title"></div>
 
         <div class="project_box">
             <div class="project_title_tab">
-                <div class="project_bullet">1</div>
-                <div class="project_title">Mark Alvaro</div>
             </div>
             <div class="project_content">
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua." </p>
+                <p>插个图片吧</p>
             </div>
         </div>
 
-        <div class="project_box">
-            <div class="project_title_tab">
-                <div class="project_bullet">2</div>
-                <div class="project_title">Mark Alvaro</div>
-            </div>
-            <div class="project_content">
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. "</p>
-            </div>
-        </div>
 
 
     </div> <!--end of right content-->
@@ -140,8 +132,6 @@
 
 <div class="footer">
     <div class="right_footer">
-        Copyright 2009. Websitename <a href="#">Home</a> <a href="#">About</a> <a href="#">Portofolio</a> <a href="#">Contact</a>
-        <a href="http://indeziner.com" target="_blank">INDEZINER</a>
     </div>
 </div>
 

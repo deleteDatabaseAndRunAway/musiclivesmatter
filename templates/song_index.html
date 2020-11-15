@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+    {% block head %}
+    <title>{{ song.song_name }}歌曲主页</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user_style.css'%}" />
+        <script type="text/javascript">{{script}}('{{wrong}}')</script>
+{% endblock %}
+
+{% block content %}
+<div id="app">
+    歌曲名：{{song.song_name}}
+    专辑名：{{ song.album_id.album_name}}
+    <a href="../song_like/{{ song.song_id }}">喜欢歌曲</a>
+</div>
+{% endblock %}
