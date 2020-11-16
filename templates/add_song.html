@@ -15,6 +15,11 @@
     {% endblock %}
 </head>
 <body>
+{% if msg != None %}
+<script type="text/javascript">
+    alert("{{ msg }}");
+</script>
+{% endif %}
 <div id="main_container">
 
     <div id="header">
@@ -23,19 +28,22 @@
             <ul>
                 <li><a class="current" href="{% url 'musicBase:index' %}" title="">主页</a></li>
                 <li class="divider"></li>
-                <li><a href="{% url 'musicBase:regist' %}" title="">用户注册</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url 'musicBase:user_index' user_id=request.user.id %}">{{ request.user }} 个人主页</a></li>
+                <li><a href="{% url 'musicBase:delete_user' %}" title="">用户注销</a></li>
                 <li class="divider"></li>
-                <li><a href="{% url 'musicBase:login' %}" title="">用户登录</a></li>
+                <li><a href="{% url 'musicBase:logout' %}" title="">退出登录</a></li>
                 <li class="divider"></li>
                 <li><a href="{% url 'musicBase:update_user_info' %}" title="">用户信息管理</a></li>
                 <li class="divider"></li>
-                <li><a href="{% url 'musicBase:delete_user' %}" title="">用户注销</a></li>
+                {% else %}
+                <li><a href="{% url 'musicBase:regist' %}" title="">用户注册</a></li>
                 <li class="divider"></li>
-                <li><a href="{% url 'musicBase:add_song' %}" title="">增加歌曲</a></li>
+                <li><a href="{% url 'musicBase:login' %}" title="">用户登陆</a></li>
                 <li class="divider"></li>
-                <li><a href="{% url 'musicBase:add_singer' %}" title="">增加歌手</a></li>
-                <li class="divider"></li>
-                <li><a href="{% url 'musicBase:add_album' %}" title="">增加专辑</a></li>
+                {% endif %}
+
+                <li><a href="{% url 'musicBase:music_manage' %}" title="">音乐库</a></li>
                 <li class="divider"></li>
             </ul>
         </div>
@@ -112,7 +120,7 @@
             <div class="project_title_tab">
             </div>
             <div class="project_content">
-                <p>插个图片吧</p>
+                <img src="{% static 'css/images/backbone.jpg'%}"/>
             </div>
         </div>
 

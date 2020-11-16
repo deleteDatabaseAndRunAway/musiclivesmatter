@@ -6,9 +6,6 @@ from django import forms
 from musicBase import models
 from musicBase.models import *
 
-class DeleteSingerInfo(forms.Form):
-    singer_name = forms.CharField(label='歌手名', max_length=100)
-
 class SingerInfo(forms.Form):
     singer_name = forms.CharField(label='歌手名', max_length=100)
     singer_gender = forms.CharField(label='性别',max_length=20)
@@ -35,19 +32,19 @@ def add_singer(req:HttpRequest):
     return render(req,'add_singer.html', {'uf': uf,'script':"alert",'wrong':"添加歌曲失败！"})
 
 #删
-def delete_singer(req):
-    if req.method == 'POST':
-        uf = DeleteSingerInfo(req.POST)
-        if uf.is_valid():
-            cleaned = uf.clean()
-            singer_to_delete = Singer.objects.filter(singer_name__exact=cleaned['singer_name'])
-            if singer_to_delete:
-                singer_to_delete.delete()
-                return HttpResponse('delete singer success!!')
-            return HttpResponse('no such Singer!')
-    else:
-        uf = DeleteSingerInfo()
-    return render(req,'delete_singer.html', {'uf': uf})
+def singer_delete(req,singer_id):
+    Singer.objects.get(singer_id=singer_id).delete()
+    return redirect("musicBase:singer_showall")
+
+def singer_index(req:HttpRequest,singer_id):
+    singer = Singer.objects.get(singer_id=singer_id)
+    albums = Album.objects.filter(singer_id=singer)
+    songs = []
+    for i in albums:
+        tmpSong = Song.objects.filter(album_id=i)
+        for j in tmpSong:
+            songs.append(j)
+    return render(req,'singerPage.html',{'songs':songs,'singer':singer})
 
 #展示
 def singer_showall(req:HttpRequest):

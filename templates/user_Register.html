@@ -15,6 +15,13 @@
     {% endblock %}
 </head>
 <body>
+
+{% if msg != None %}
+<script type="text/javascript">
+    alert("{{ msg }}");
+</script>
+{% endif %}
+
 <div id="main_container">
 
     <div id="header">
@@ -23,21 +30,25 @@
             <ul>
                 <li><a class="current" href="{% url 'musicBase:index' %}" title="">主页</a></li>
                 <li class="divider"></li>
-                <li><a href="{% url 'musicBase:regist' %}" title="">用户注册</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url 'musicBase:user_index' user_id=request.user.id %}">{{ request.user }} 个人主页</a></li>
+                <li><a href="{% url 'musicBase:delete_user' %}" title="">用户注销</a></li>
                 <li class="divider"></li>
-                <li><a href="{% url 'musicBase:login' %}" title="">用户登录</a></li>
+                <li><a href="{% url 'musicBase:logout' %}" title="">退出登录</a></li>
                 <li class="divider"></li>
                 <li><a href="{% url 'musicBase:update_user_info' %}" title="">用户信息管理</a></li>
                 <li class="divider"></li>
-                <li><a href="{% url 'musicBase:delete_user' %}" title="">用户注销</a></li>
+                {% else %}
+                <li><a href="{% url 'musicBase:regist' %}" title="">用户注册</a></li>
                 <li class="divider"></li>
-                <li><a href="{% url 'musicBase:add_song' %}" title="">增加歌曲</a></li>
+                <li><a href="{% url 'musicBase:login' %}" title="">用户登陆</a></li>
                 <li class="divider"></li>
-                <li><a href="{% url 'musicBase:add_singer' %}" title="">增加歌手</a></li>
+                {% endif %}
+
+                <li><a href="{% url 'musicBase:music_manage' %}" title="">音乐库</a></li>
                 <li class="divider"></li>
-                <li><a href="{% url 'musicBase:add_album' %}" title="">增加专辑</a></li>
-                <li class="divider"></li>
-            </ul>        </div>
+            </ul>
+        </div>
 
 
     </div>
@@ -91,29 +102,16 @@
         <div class="title">用户注册</div>
         <form action="#" method="post">
         <div id="contact_form">
-            <div class="form_row">
-                <label>用户名:</label><input type="text" name="name" class="contact_input"/>
-            </div>
+            {% for i in uf %}
+                <div class="form_row">
+                    {% if i.name == "password" or i.name == "repeat_password" %}
+                        <label>{{i.label}}:</label><input type="password" name="{{i.name}}" class="contact_input"/>
+                    {% else %}
+                        <label>{{i.label}}:</label><input type="text" name="{{i.name}}" class="contact_input"/>
+                    {% endif %}
 
-            <div class="form_row">
-                <label>密码:</label><input type="password" name="password" class="contact_input"/>
-            </div>
-
-            <div class="form_row">
-                <label>重复输入密码:</label><input type="password" name="repeat_password" class="contact_input"/>
-            </div>
-
-            <div class="form_row">
-                <label>性别:</label><input type="text" name="gender" class="contact_input"/>
-            </div>
-
-            <div class="form_row">
-                <label>生日:</label><input type="text" name="birthday" class="contact_input"/>
-            </div>
-
-            <div class="form_row">
-                <label>联系方式:</label><input type="text" name="contact" class="contact_input"/>
-            </div>
+                </div>
+            {% endfor %}
 
             <input id = "submit-button" type="submit" src="{% static 'css/images/send.gif'%}" class="send_message"/>
 
@@ -130,7 +128,7 @@
             <div class="project_title_tab">
             </div>
             <div class="project_content">
-                <p>插个图片吧</p>
+                <img src="{% static 'css/images/backbone.jpg'%}"/>
             </div>
         </div>
 

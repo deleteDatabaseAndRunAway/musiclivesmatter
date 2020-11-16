@@ -1,52 +1,155 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     {% block head %}
-    <title>音乐社交平台</title>
+    <title>首页</title>
     {% load staticfiles %}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/user_style.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index_style.css'%}" media="screen"/>
+    <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/coda-slider.1.1.1.js"></script>
+    <script type="text/javascript" src="js/jquery-easing-compatibility.1.2.pack.js"></script>
+    <script type="text/javascript" src="js/jquery-easing.1.2.pack.js"></script>
     {% endblock %}
-
-
 </head>
 <body>
+{% if msg != None %}
+<script type="text/javascript">
+    alert("{{ msg }}");
+</script>
+{% endif %}
+<div id="main_container">
 
-<div class="header">
-    <h1>音乐社交平台</h1>
+    <div id="header">
+
+        <div id="menu">
+            <ul>
+                <li><a class="current" href="{% url 'musicBase:index' %}" title="">主页</a></li>
+                <li class="divider"></li>
+
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url 'musicBase:user_index' user_id=request.user.id %}">{{ request.user }} 个人主页</a></li>
+                <li><a href="{% url 'musicBase:delete_user' %}" title="">用户注销</a></li>
+                <li class="divider"></li>
+                <li><a href="{% url 'musicBase:logout' %}" title="">退出登录</a></li>
+                <li class="divider"></li>
+                <li><a href="{% url 'musicBase:update_user_info' %}" title="">用户信息管理</a></li>
+                <li class="divider"></li>
+                {% else %}
+                <li><a href="{% url 'musicBase:regist' %}" title="">用户注册</a></li>
+                <li class="divider"></li>
+                <li><a href="{% url 'musicBase:login' %}" title="">用户登陆</a></li>
+                <li class="divider"></li>
+                {% endif %}
+
+                <li><a href="{% url 'musicBase:music_manage' %}" title="">音乐库</a></li>
+                <li class="divider"></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="slider_content">
+        <div class="featured-arrow" id="stripNavL0">
+        </div>
+        <div id="slider">
+            <div class="slider-wrap">
+                <div id="sliderc" class="csw">
+                    <div class="panelContainer">
+
+                        <div class="panel">
+                            <div class="tab1">
+                                <p class="tab_content">我们设计了如下功能，用户方面有：注册、登录和注销。
+                                    音乐方面有：添加音乐、添加歌手和添加专辑。
+                                    并根据用户收录的音乐进行类似用户的匹配比对，进而起到一个交友的作用</p>
+
+                            </div>
+                            <div class="tab2">
+                                <p class="tab_content">我们的目标是通过这个音乐交友网站，为更多的人提供一个新的认识更多朋友的方式，
+                                    这一方面可以给人们一个不用面对面交友的机会，另一方面可以让大家在交友的同时保护隐私</p>
+
+                            </div>
+                            <div class="tab3">
+                                <p class="tab_content">主要针对那些喜欢听音乐、但是又不愿意向他人表露自己音乐喜好的人群，当代很多年轻人都有这样的特点。
+                                    我们为他们根据喜好的音乐寻找有共同爱好的朋友，扩大朋友圈。</p>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
 </div>
 
-<div class="topnav">
-    {% if request.user.is_authenticated %}
-        <a href="user_index/{{ request.user.id }}">{{ request.user }} 个人主页</a>
-        <a href="{% url 'musicBase:delete_user' %}">用户注销</a>
-        <a href="{% url 'musicBase:logout' %}">退出登录</a>
-        <a href="{% url 'musicBase:update_user_info' %}">用户信息管理</a>
-    {% else %}
-        <a href="{% url 'musicBase:regist' %}">用户注册</a>
-        <a href="{% url 'musicBase:login' %}">用户登陆</a>
-    {% endif %}
-
-
-
-    <a href="add_song">增加歌曲</a>
-    <a href="add_singer">增加歌手</a>
-    <a href="add_album">增加专辑</a>
-
-    <a href="about-us" style="float:right">关于我们</a>
-
+<div class="featured-arrow" id="stripNavR0">
 </div>
+<div class="clear"></div>
 
-{% block content %}
-{% endblock %}
+<div class="main_content">
+    <div class="left_content">
+        <div class="title">Welcome to our studio</div>
+        <p>
+            我们是来自北京航空航天大学计算机学院的学生，希望能帮助大家在这里结识更多的朋友！
+            <br/><br/>
+            音乐是一杯清茶，润人心脾<br/>
+            音乐是一片秋叶，撩人乡思<br/>
+            音乐是一缕阳光，暖人灵魂<br/>
+            祝你能找到与你一同欣赏美妙音乐的益友<br/>
+        </p>
 
-{% block vuejs %}
-{% endblock %}
+        <div class="title">News Blog</div>
+        <div class="banner">
+            <img src="{% static 'css/images/news_icon.jpg'%}" alt="" title="" class="news_icon"/>
+            <p class="banner_content">
+                创作团队：<br/>王宇康<br/>罗毅轩<br/>杨再飞
+            </p>
+        </div>
+
+
+    </div>
+
+    <div class="right_content">
+        <div class="title">Latest Information</div>
+
+        <div class="project_box">
+            <div class="project_title_tab">
+                <div class="project_bullet">1</div>
+                <div class="project_title">当前用户数</div>
+            </div>
+            <div class="project_content">
+                <img src="{% static 'css/images/musicpeople.jpg'%}" alt="" title="" class="left_img"/>
+                <p>这里显示总用户数</p>
+            </div>
+        </div>
+
+        <div class="project_box">
+            <div class="project_title_tab">
+                <div class="project_bullet">2</div>
+                <div class="project_title">当前音乐数</div>
+            </div>
+            <div class="project_content">
+                <img src="{% static 'css/images/music.jpg'%}" alt="" title="" class="left_img"/>
+                <p>这里显示总音乐数 </p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="clear"></div>
+</div>
 
 <div class="footer">
-    <h2>待定</h2>
 </div>
 
+
+</div>
 </body>
 </html>

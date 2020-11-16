@@ -2,44 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5bb4a3a-35da-438b-9235-2afade1d3630" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/musicBase/migrations/0003_auto_20201115_1106.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/musicBase/migrations/0004_auto_20201115_1355.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/musicBase/migrations/0005_auto_20201115_1410.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/musicBase/migrations/0006_auto_20201115_1424.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/musicBase/migrations/0007_auto_20201115_1426.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/musiclivesmatter.rar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/banner_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/bc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/border.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/center_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/footer_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/green_bullet.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/header_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/left_nav.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/logo.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/menu_bg.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/menu_divider.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/music.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/musicpeople.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/news_icon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/project_thumb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/read_more.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/right_nav.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/send.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/tab1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/tab2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/images/tab3.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/index_style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/album_show_all.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/images/bc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index_style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/song_index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/song_showall.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user_index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user_style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/musicBase.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/musicBase/migrations/0008_auto_20201115_1950.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/images/backbone.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/albumPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/compare_likes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/musicManage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/personalPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/singerPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/songPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/musicBase/albums.py" beforeDir="false" afterPath="$PROJECT_DIR$/musicBase/albums.py" afterDir="false" />
@@ -49,16 +20,20 @@
       <change beforePath="$PROJECT_DIR$/musicBase/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/musicBase/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/musicBase/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/musicBase/users.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/musicBase/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/musicBase/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/musiclivesmatter.rar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/add_album.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_album.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/add_singer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_singer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/add_song.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_song.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/album_show_all.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/album_show_all.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/content.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/singer_showall.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/singer_showall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/song_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/song_index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/song_showall.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/song_showall.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/update_user_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/update_user_info.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user_Register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_Register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user_index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,14 +73,7 @@
         <item name="db [2]" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="django_session: table" type="3d80ac25:SqliteImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db [2]" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="musicBase_songlikes: table" type="3d80ac25:SqliteImplModel$Table" />
+        <item name="musicBase_songcomment: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -213,7 +181,9 @@
       <workItem from="1605275639608" duration="2630000" />
       <workItem from="1605315925074" duration="4134000" />
       <workItem from="1605341608186" duration="2222000" />
-      <workItem from="1605406267149" duration="15142000" />
+      <workItem from="1605406267149" duration="19704000" />
+      <workItem from="1605438178642" duration="6860000" />
+      <workItem from="1605485070688" duration="4693000" />
     </task>
     <servers />
   </component>
@@ -269,10 +239,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="349" y="70" key="com.intellij.database.dbimport.ImportDialog/0.0.1536.824@0.0.1536.824" timestamp="1603102126960" />
-    <state x="499" y="220" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1605427378558">
+    <state x="499" y="220" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1605434727965">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="220" key="com.intellij.database.dbimport.ImportUtil.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1605427378558" />
+    <state x="499" y="220" key="com.intellij.database.dbimport.ImportUtil.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1605434727965" />
     <state x="564" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604135960654">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -281,13 +251,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="0" width="836" height="591" maximized="true" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1605343722825" />
-    <state x="689" y="54" width="621" height="735" key="find.popup" timestamp="1605418996735">
+    <state x="689" y="54" width="621" height="735" key="find.popup" timestamp="1605487310260">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="689" y="54" width="621" height="735" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1605418996735" />
-    <state x="763" y="146" width="672" height="678" key="search.everywhere.popup" timestamp="1605418866194">
+    <state x="689" y="54" width="621" height="735" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1605487310260" />
+    <state x="763" y="146" width="672" height="678" key="search.everywhere.popup" timestamp="1605487298831">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="763" y="146" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1605418866194" />
+    <state x="763" y="146" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1605487298831" />
   </component>
 </project>

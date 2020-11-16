@@ -15,6 +15,11 @@
     {% endblock %}
 </head>
 <body>
+{% if msg != None %}
+<script type="text/javascript">
+    alert("{{ msg }}");
+</script>
+{% endif %}
 <div id="main_container">
 
     <div id="header">
@@ -25,35 +30,30 @@
                 <li class="divider"></li>
 
                 {% if request.user.is_authenticated %}
-                    <a href="user_index/{{ request.user.id }}">{{ request.user }} 个人主页</a>
-                    <a href="{% url 'musicBase:delete_user' %}">用户注销</a>
-                    <a href="{% url 'musicBase:logout' %}">退出登录</a>
-                    <a href="{% url 'musicBase:update_user_info' %}">用户信息管理</a>
-                {% else %}
-                    <a href="{% url 'musicBase:regist' %}">用户注册</a>
-                    <a href="{% url 'musicBase:login' %}">用户登陆</a>
-                {% endif %}
-                
-                <li><a href="{% url 'musicBase:update_user_info' %}" title="">用户信息管理</a></li>
-                <li class="divider"></li>
+                <li><a href="{% url 'musicBase:user_index' user_id=request.user.id %}">{{ request.user }} 个人主页</a></li>
                 <li><a href="{% url 'musicBase:delete_user' %}" title="">用户注销</a></li>
                 <li class="divider"></li>
-                <li><a href="{% url 'musicBase:add_song' %}" title="">增加歌曲</a></li>
+                <li><a href="{% url 'musicBase:logout' %}" title="">退出登录</a></li>
                 <li class="divider"></li>
-                <li><a href="{% url 'musicBase:add_singer' %}" title="">增加歌手</a></li>
+                <li><a href="{% url 'musicBase:update_user_info' %}" title="">用户信息管理</a></li>
                 <li class="divider"></li>
-                <li><a href="{% url 'musicBase:add_album' %}" title="">增加专辑</a></li>
+                {% else %}
+                <li><a href="{% url 'musicBase:regist' %}" title="">用户注册</a></li>
                 <li class="divider"></li>
+                <li><a href="{% url 'musicBase:login' %}" title="">用户登陆</a></li>
+                <li class="divider"></li>
+                {% endif %}
+
+                <li><a href="{% url 'musicBase:music_manage' %}" title="">音乐库</a></li>
+                <li class="divider"></li>
+
             </ul>
         </div>
     </div>
 
     <div class="slider_content">
-
         <div class="featured-arrow" id="stripNavL0">
         </div>
-
-
         <div id="slider">
             <div class="slider-wrap">
                 <div id="sliderc" class="csw">
@@ -106,7 +106,7 @@
 
         <div class="title">News Blog</div>
         <div class="banner">
-            <img src="images/news_icon.jpg" alt="" title="" class="news_icon"/>
+            <img src="{% static 'css/images/news_icon.jpg'%}" alt="" title="" class="news_icon"/>
             <p class="banner_content">
                 创作团队：<br/>王宇康<br/>罗毅轩<br/>杨再飞
             </p>
@@ -124,7 +124,7 @@
                 <div class="project_title">当前用户数</div>
             </div>
             <div class="project_content">
-                <img src="images/musicpeople.jpg" alt="" title="" class="left_img"/>
+                <img src="{% static 'css/images/musicpeople.jpg'%}" alt="" title="" class="left_img"/>
                 <p>这里显示总用户数</p>
             </div>
         </div>
@@ -135,7 +135,7 @@
                 <div class="project_title">当前音乐数</div>
             </div>
             <div class="project_content">
-                <img src="images/music.jpg" alt="" title="" class="left_img"/>
+                <img src="{% static 'css/images/music.jpg'%}" alt="" title="" class="left_img"/>
                 <p>这里显示总音乐数 </p>
             </div>
         </div>

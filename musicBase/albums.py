@@ -4,8 +4,6 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpRequest
 from django import forms
 from musicBase.models import *
 
-class DeleteAlbumInfo(forms.Form):
-    album_name = forms.CharField(label='专辑名', max_length=100)
 
 class AlbumInfo(forms.Form):
     album_name = forms.CharField(label='专辑名',max_length=50)
@@ -26,34 +24,31 @@ def addAlbum(req):
             if singer:
                 pass;
             else:
-                return render(req,'add_album.html', {'af': af})
+                print("nosinger")
+                return render(req,'add_album.html', {'af': af,'msg':"请先添加歌手"})
             # 如果有此专辑同样歌手
-            albumAndSinger = Album.objects.filter(album_singer_id=singer[0], album_name=album_name)
+            albumAndSinger = Album.objects.filter(singer_id=singer[0], album_name=album_name)
             if albumAndSinger:
-                return render(req,'add_album.html', {'af': af})
+                return render(req,'add_album.html', {'af': af,'msg':"已有该专辑"})
             else:
                 # 添加到数据库
-                Album.objects.create(album_singer_id=singer[0], album_name=album_name, album_date=album_data)
-                return HttpResponse('add success!!')
+                Album.objects.create(singer_id=singer[0], album_name=album_name, album_date=album_data)
+                return render(req,'add_album.html', {'af': af,'msg':"添加专辑成功！"})
         else:
-            print(45)
+            return render(req,'add_album.html', {'af': af,'msg':"输入信息有格式问题"})
     af = AlbumInfo()
     return render(req,'add_album.html', {'af': af})
 
 
-def delete_album(req):
-    if req.method == 'POST':
-        uf = DeleteAlbumInfo(req.POST)
-        if uf.is_valid():
-            cleaned = uf.clean()
-            album_to_delete = Album.objects.filter(album_name_exact=cleaned['album_name'])
-            if album_to_delete:
-                album_to_delete.delete()
-                return HttpResponse('add album success!!')
-            return HttpResponse('no album Singer!')
-    else:
-        uf = DeleteAlbumInfo()
-    return render(req,'delete_album.html', {'uf': uf})
+def album_delete(req,album_id):
+    Album.objects.get(album_id=album_id).delete()
+    return redirect("musicBase:album_showall")
+
+
+def album_index(req:HttpRequest,album_id):
+    album = Album.objects.get(album_id=album_id)
+    songs = Song.objects.filter(album_id=album)
+    return render(req,'albumPage.html',{'songs':songs,'album':album})
 
 #展示
 def album_showall(req:HttpRequest):
